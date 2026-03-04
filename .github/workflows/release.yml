@@ -21,7 +21,7 @@ jobs:
         echo "$(make -s log | grep GOLANG_VERSION)" >> "$GITHUB_ENV"
 
     - name: Build and push image
-      uses: rancher/ecm-distro-tools/actions/publish-image@master
+      uses: tashima42/ecm-distro-tools/actions/publish-image@add-prime-make-target
       with:
         image: hardened-kubernetes
         tag: ${{ github.event.release.tag_name }}
